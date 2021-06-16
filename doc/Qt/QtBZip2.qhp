@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QtHelpProject version="1.0">
+    <namespace>com.neutrino.qtbzip2</namespace>
+    <virtualFolder>QtBZip2</virtualFolder>
+    <customFilter name="Qt BZIP2 1.6.0">
+        <filterAttribute>QtBZip2</filterAttribute>
+        <filterAttribute>1.6.0</filterAttribute>
+    </customFilter>
+    <filterSection>
+        <filterAttribute>QtBZip2</filterAttribute>
+        <filterAttribute>1.6.0</filterAttribute>
+        <toc>
+            <section title="Qt BZIP2 Manual" ref="index.html">
+                <section title="English" ref="en/index.html"/>
+                <section title="Traditional Chinese" ref="tw/index.html"/>
+                <section title="Simplified Chinese" ref="cn/index.html"/>
+            </section>
+        </toc>
+        <keywords>
+            <keyword name="BZIP2" id="CIOS::BZIP2" ref="index.html"/>
+        </keywords>
+        <files>
+            <file>*.css</file>
+            <file>*.html</file>
+            <file>images/*</file>
+            <file>en/*</file>
+            <file>cn/*</file>
+            <file>tw/*</file>
+        </files>
+    </filterSection>
+</QtHelpProject>

@@ -1,0 +1,709 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- lastest modification : 2015-11-02 -->
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Qt LZO类别使用说明</title>
+    <link href="classic.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div align="center"><h1>Qt LZO类别使用说明</h1></div>
+    <hr size="2" width="100%">
+    <h3> 目录</h3>
+    <ol>
+      <li><a href="#QtLzo">QtLzo类别</a></li>
+      <li><a href="#ScriptableLzo">ScriptableLzo类别</a></li>
+      <li><a href="#Functions">QtLzo函数</a><br>
+      </li>
+    </ol>
+    <br>
+    <hr size="2" width="100%">
+    <h3><a name="QtLzo"></a>QtLzo类别</h3>
+    <h4>功能</h4>
+    处理数据的LZO压缩及解压缩功能。<br>
+    <h4>宣告</h4>
+    <span style=" color:#808000;">class</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#800080;">QtLzo</span>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000000;">{</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#808000;">public</span><span style=" color:#000000;">:</span></pre>
+    <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">typedef</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">enum</span><span style=" color:#c0c0c0;">      </span><span style=" color:#000000;">{</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">LZO1x</span><span style=" color:#c0c0c0;">      </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000080;">1</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">,</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">LZO1</span><span style=" color:#c0c0c0;">       </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000080;">2</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">,</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">LZO1_99</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000080;">3</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">,</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">LZO1a</span><span style=" color:#c0c0c0;">      </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000080;">4</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">,</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">LZO1a_99</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000080;">5</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">,</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">LZO1b</span><span style=" color:#c0c0c0;">      </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000080;">6</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">,</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">LZO1b_99</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000080;">7</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">,</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">LZO1b_999</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000080;">8</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">,</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">LZO1c</span><span style=" color:#c0c0c0;">      </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000080;">9</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">,</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">LZO1c_99</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000080;">10</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">,</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">LZO1c_999</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000080;">11</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">,</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">LZO1f_1</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000080;">12</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">,</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">LZO1f_999</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000080;">13</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">,</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">LZO1x_1</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000080;">14</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">,</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">LZO1x_1_11</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000080;">15</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">,</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">LZO1x_1_12</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000080;">16</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">,</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">LZO1x_1_15</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000080;">17</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">,</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">LZO1x_999</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000080;">18</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">,</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">LZO1y_1</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000080;">19</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">,</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">LZO1y_999</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000080;">20</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">,</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">LZO1z_999</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000080;">21</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">,</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">LZO2a_999</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000080;">22</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">}</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">LzoMethods</span><span style=" color:#c0c0c0;">      </span><span style=" color:#000000;">;</span></pre>
+    <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">explicit</span><span style=" color:#c0c0c0;">     </span><span style=" color:#800080;">QtLzo</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">virtual</span><span style=" color:#c0c0c0;">     </span><span style=" color:#000000;">~</span><span style=" font-style:italic; color:#000000;">QtLzo</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+    <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">virtual</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;"> </span><span style=" font-style:italic; color:#000000;">isLZO</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">(</span><span style=" color:#800080;">QByteArray</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>header<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+    <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">virtual</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">void</span><span style=" color:#c0c0c0;"> </span><span style=" font-style:italic; color:#000000;">CleanUp</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+    <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">virtual</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;"> </span><span style=" font-style:italic; color:#000000;">IsCorrect</span><span style=" color:#c0c0c0;">          </span><span style=" color:#000000;">(</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>returnCode<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">virtual</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;"> </span><span style=" font-style:italic; color:#000000;">IsEnd</span><span style=" color:#c0c0c0;">              </span><span style=" color:#000000;">(</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>returnCode<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">virtual</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;"> </span><span style=" font-style:italic; color:#000000;">IsFault</span><span style=" color:#c0c0c0;">            </span><span style=" color:#000000;">(</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>returnCode<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+    <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">virtual</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;">  </span><span style=" font-style:italic; color:#000000;">BeginCompress</span><span style=" color:#c0c0c0;">      </span><span style=" color:#000000;">(</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>level<span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000080;">9</span><span style=" color:#000000;">,</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>method<span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">LZO1x</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">virtual</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;">  </span><span style=" font-style:italic; color:#000000;">BeginCompress</span><span style=" color:#c0c0c0;">      </span><span style=" color:#000000;">(</span><span style=" color:#800080;">QVariantList</span><span style=" color:#c0c0c0;"> </span>arguments<span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QVariantList</span><span style=" color:#000000;">()</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">virtual</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;">  </span><span style=" font-style:italic; color:#000000;">doCompress</span><span style=" color:#c0c0c0;">         </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QByteArray</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>Source<span style=" color:#c0c0c0;">      </span><span style=" color:#000000;">,</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">                                           </span><span style=" color:#800080;">QByteArray</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>Compressed<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">virtual</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;">  </span><span style=" font-style:italic; color:#000000;">doSection</span><span style=" color:#c0c0c0;">          </span><span style=" color:#000000;">(</span><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">QByteArray</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>Source<span style=" color:#c0c0c0;">      </span><span style=" color:#000000;">,</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">                                           </span><span style=" color:#800080;">QByteArray</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>Compressed<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">virtual</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;">  </span><span style=" font-style:italic; color:#000000;">CompressDone</span><span style=" color:#c0c0c0;">       </span><span style=" color:#000000;">(</span><span style=" color:#800080;">QByteArray</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>Compressed<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+    <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">virtual</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;">  </span><span style=" font-style:italic; color:#000000;">BeginDecompress</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">virtual</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;">  </span><span style=" font-style:italic; color:#000000;">doDecompress</span><span style=" color:#c0c0c0;">       </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QByteArray</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>Source<span style=" color:#c0c0c0;">      </span><span style=" color:#000000;">  ,</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">                                           </span><span style=" color:#800080;">QByteArray</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>Decompressed<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">virtual</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;">  </span><span style=" font-style:italic; color:#000000;">undoSection</span><span style=" color:#c0c0c0;">        </span><span style=" color:#000000;">(</span><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">QByteArray</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>Source<span style=" color:#c0c0c0;">      </span><span style=" color:#000000;">  ,</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">                                           </span><span style=" color:#800080;">QByteArray</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>Decompressed<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">virtual</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;">  </span><span style=" font-style:italic; color:#000000;">DecompressDone</span><span style=" color:#c0c0c0;">     </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+    <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">virtual</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;"> </span><span style=" font-style:italic; color:#000000;">IsTail</span><span style=" color:#c0c0c0;">             </span><span style=" color:#000000;">(</span><span style=" color:#800080;">QByteArray</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>header<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+    <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#808000;">protected</span><span style=" color:#000000;">:</span></pre>
+    <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">void</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800000;">LzoPacket</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+    <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">virtual</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">void</span><span style=" color:#c0c0c0;"> </span><span style=" font-style:italic; color:#000000;">CompressHeader</span><span style=" color:#c0c0c0;">     </span><span style=" color:#000000;">(</span><span style=" color:#800080;">QByteArray</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>Compressed<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">virtual</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">void</span><span style=" color:#c0c0c0;"> </span><span style=" font-style:italic; color:#000000;">CompressTail</span><span style=" color:#c0c0c0;">       </span><span style=" color:#000000;">(</span><span style=" color:#808000;">unsigned</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>checksum<span style=" color:#000000;">,</span><span style=" color:#800080;">QByteArray</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>Compressed<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">virtual</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;">  </span><span style=" font-style:italic; color:#000000;">DecompressHeader</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QByteArray</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>Source<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+    <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#808000;">private</span><span style=" color:#000000;">:</span></pre>
+    <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000000;">};</span></pre>
+    <br>
+    <h4>说明</h4>
+    <br>
+    <b> </b><b>列举型态</b><br>
+    <br>
+    <a name="LzoMethods"></a>LzoMethods<br>
+    <br>
+    <table width="100%" border="1" cellpadding="1" cellspacing="1">
+      <tbody>
+        <tr>
+          <td valign="top" align="center">名称<br>
+          </td>
+          <td valign="top" align="center">值<br>
+          </td>
+          <td valign="top" align="center">作用<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">LZO1x<br>
+          </td>
+          <td valign="top" align="right">1<br>
+          </td>
+          <td valign="top">使用LZO1 X压缩函式。<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">LZO1<br>
+          </td>
+          <td valign="top" align="right">2<br>
+          </td>
+          <td valign="top">使用LZO1通用压缩函式。</td>
+        </tr>
+        <tr>
+          <td valign="top">LZO1_99<br>
+          </td>
+          <td valign="top" align="right">3<br>
+          </td>
+          <td valign="top">使用LZO1-99压缩函式。</td>
+        </tr>
+        <tr>
+          <td valign="top">LZO1a<br>
+          </td>
+          <td valign="top" align="right">4<br>
+          </td>
+          <td valign="top">使用LZO1a通用压缩函式。</td>
+        </tr>
+        <tr>
+          <td valign="top">LZO1a_99<br>
+          </td>
+          <td valign="top" align="right">5<br>
+          </td>
+          <td valign="top">使用LZO1a-99压缩函式。</td>
+        </tr>
+        <tr>
+          <td valign="top">LZO1b<br>
+          </td>
+          <td valign="top" align="right">6<br>
+          </td>
+          <td valign="top">使用LZO1b通用压缩函式。</td>
+        </tr>
+        <tr>
+          <td valign="top">LZO1b_99<br>
+          </td>
+          <td valign="top" align="right">7<br>
+          </td>
+          <td valign="top">使用LZO1b-99压缩函式。</td>
+        </tr>
+        <tr>
+          <td valign="top">LZO1b_999<br>
+          </td>
+          <td valign="top" align="right">8<br>
+          </td>
+          <td valign="top">使用LZO1b-999压缩函式。</td>
+        </tr>
+        <tr>
+          <td valign="top">LZO1c<br>
+          </td>
+          <td valign="top" align="right">9<br>
+          </td>
+          <td valign="top">使用LZO1c通用压缩函式。</td>
+        </tr>
+        <tr>
+          <td valign="top">LZO1c_99<br>
+          </td>
+          <td valign="top" align="right">10<br>
+          </td>
+          <td valign="top">使用LZO1c-99压缩函式。</td>
+        </tr>
+        <tr>
+          <td valign="top">LZO1c_999<br>
+          </td>
+          <td valign="top" align="right">11<br>
+          </td>
+          <td valign="top">使用LZO1c-999压缩函式。</td>
+        </tr>
+        <tr>
+          <td valign="top">LZO1f_1<br>
+          </td>
+          <td valign="top" align="right">12<br>
+          </td>
+          <td valign="top">使用LZO1f-1压缩函式。</td>
+        </tr>
+        <tr>
+          <td valign="top">LZO1f_999<br>
+          </td>
+          <td valign="top" align="right">13<br>
+          </td>
+          <td valign="top">使用LZO1f-999压缩函式。</td>
+        </tr>
+        <tr>
+          <td valign="top">LZO1x_1<br>
+          </td>
+          <td valign="top" align="right">14<br>
+          </td>
+          <td valign="top">使用LZO1x-1压缩函式。</td>
+        </tr>
+        <tr>
+          <td valign="top">LZO1x_1_11<br>
+          </td>
+          <td valign="top" align="right">15<br>
+          </td>
+          <td valign="top">使用LZO1x-1-11压缩函式。</td>
+        </tr>
+        <tr>
+          <td valign="top">LZO1x_1_12<br>
+          </td>
+          <td valign="top" align="right">16<br>
+          </td>
+          <td valign="top">使用LZO1x-1-12压缩函式。</td>
+        </tr>
+        <tr>
+          <td valign="top">LZO1x_1_15<br>
+          </td>
+          <td valign="top" align="right">17<br>
+          </td>
+          <td valign="top">使用LZO1x-1-15压缩函式。</td>
+        </tr>
+        <tr>
+          <td valign="top">LZO1x_999<br>
+          </td>
+          <td valign="top" align="right">18<br>
+          </td>
+          <td valign="top">使用LZO1x-999压缩函式。</td>
+        </tr>
+        <tr>
+          <td valign="top">LZO1y_1<br>
+          </td>
+          <td valign="top" align="right">19<br>
+          </td>
+          <td valign="top">使用LZO1y-1压缩函式。</td>
+        </tr>
+        <tr>
+          <td valign="top">LZO1y_999<br>
+          </td>
+          <td valign="top" align="right">20<br>
+          </td>
+          <td valign="top">使用LZO1y-999压缩函式。</td>
+        </tr>
+        <tr>
+          <td valign="top">LZO1z_999<br>
+          </td>
+          <td valign="top" align="right">21<br>
+          </td>
+          <td valign="top">使用LZO1z-999压缩函式。</td>
+        </tr>
+        <tr>
+          <td valign="top">LZO2a_999<br>
+          </td>
+          <td valign="top" align="right">22<br>
+          </td>
+          <td valign="top">使用LZO2a-999压缩函式。</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <a name="isLZO"></a><br>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;"></span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;"> </span><span style=" font-style:italic; color:#000000;">isLZO</span><span style=" color:#c0c0c0;"></span><span style=" color:#000000;">(</span><span style=" color:#800080;">QByteArray</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>header<span style=" color:#000000;">)</span><span style=" color:#000000;"></span></pre>
+    <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+    判断header数据是否为LZO的表头。<br>
+    <br>
+    LZO的表头为7个位元组，如下：<br>
+    <table width="100%" border="1" cellpadding="1" cellspacing="1">
+      <tbody>
+        <tr>
+          <td valign="top" align="center">0<br>
+          </td>
+          <td valign="top" align="center">1<br>
+          </td>
+          <td valign="top" align="center">2<br>
+          </td>
+          <td valign="top" align="center">3<br>
+          </td>
+          <td valign="top" align="center">4<br>
+          </td>
+          <td valign="top" align="center">5<br>
+          </td>
+          <td valign="top" align="center">6<br>
+          </td>
+          <td valign="top" align="center">7<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top" align="center">0x00<br>
+          </td>
+          <td valign="top" align="center">0xE9<br>
+          </td>
+          <td valign="top" align="center">0x4C<br>
+          </td>
+          <td valign="top" align="center">0x5A<br>
+          </td>
+          <td valign="top" align="center">0x4F<br>
+          </td>
+          <td valign="top" align="center">0xFF<br>
+          </td>
+          <td valign="top" align="center">0x1A<br>
+          </td>
+          <td valign="top" align="center"><br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <a name="CleanUp"></a><br>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;"></span><span style=" color:#808000;">void</span><span style=" color:#c0c0c0;"> </span><span style=" font-style:italic; color:#000000;">CleanUp</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#000000;"></span></pre>
+    <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+    清除LzoPacket以便重覆使用。如果您需要重覆使用QtLzo类别内的函式，第二次使用时，最好呼叫一次CleanUp()。<br>
+    <br>
+    <a name="IsCorrect"></a><br>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;"></span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;"> </span><span style=" font-style:italic; color:#000000;">IsCorrect</span><span style=" color:#c0c0c0;"></span><span style=" color:#000000;">(</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>returnCode<span style=" color:#000000;">)</span><span style=" color:#000000;"></span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;"><br></span></pre>
+    判断压缩或解压缩时期的返回码是否为操作正确的返回码。<br>
+    <br>
+    <a name="IsEnd"></a><br>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;"></span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;"> </span><span style=" font-style:italic; color:#000000;">IsEnd</span><span style=" color:#c0c0c0;"></span><span style=" color:#000000;">(</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>returnCode<span style=" color:#000000;">)</span><span style=" color:#000000;"></span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;"><br></span></pre>
+    判断操作时期的返回码是否为压缩或是解压缩完成。<br>
+    <br>
+    <a name="IsFault"></a><br>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;"></span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;"> </span><span style=" font-style:italic; color:#000000;">IsFault</span><span style=" color:#c0c0c0;"></span><span style=" color:#000000;">(</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>returnCode<span style=" color:#000000;">)</span><span style=" color:#000000;"></span></pre>
+    <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+    判断操作时期的返回码是否为发生严重错误的状况。<br>
+    <br>
+    <br>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span><span style=" font-style:italic; color:#000000;">BeginCompress</span><span style=" color:#c0c0c0;"></span><span style=" color:#000000;">(</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>level<span style=" color:#000080;"></span><span style=" color:#000000;">,</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>method<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;"><br></span></pre>
+    设定压缩的参数。<br>
+    <br>
+    <ol>
+      <li>level : 1~9，内定值为9。</li>
+      <li>method : lzoMethods，内定值为LZO1x。</li>
+    </ol>
+    <a name="BeginCompress"></a><br>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;"></span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span><span style=" font-style:italic; color:#000000;">BeginCompress</span><span style=" color:#c0c0c0;"></span><span style=" color:#000000;">(</span><span style=" color:#800080;">QVariantList</span><span style=" color:#c0c0c0;"> </span>arguments<span style=" color:#000000;">)</span><span style=" color:#000000;"></span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;"><br></span></pre>
+    设定压缩的参数。<br>
+    <br>
+    <ol>
+      <li>level : 1~9，内定值为9。</li>
+      <li>method : lzoMethods，内定值为LZO1x。</li>
+      <li>blocks : 每个区块的大小，内定值为8192。</li>
+      <li>output length : 输出长度，内定值为0。</li>
+    </ol>
+    <a name="doCompress"></a><br>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;"></span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span><span style=" font-style:italic; color:#000000;">doCompress</span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QByteArray</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>Source<span style=" color:#c0c0c0;"></span><span style=" color:#000000;">,</span><span style=" color:#800080;">QByteArray</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>Compressed<span style=" color:#000000;">)</span><span style=" color:#000000;"></span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;"><br></span></pre>
+    将Source压缩到Compressed，成为LZO压缩数据格式。这个函式只需要使用一次，整个数据封包会被包装成完整的LZO文件数据，主
+    要使用于确定原始数据大小的状况下使用。<br>
+    <br>
+    返回值为操作码。<br>
+    <br>
+    <a name="doSection"></a><br>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span><span style=" font-style:italic; color:#000000;">doSection</span><span style=" color:#c0c0c0;"></span><span style=" color:#000000;">(</span><span style=" color:#c0c0c0;"></span><span style=" color:#800080;">QByteArray</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>Source<span style=" color:#000000;">,</span><span style=" color:#800080;">QByteArray</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>Compressed<span style=" color:#000000;">)</span><span style=" color:#000000;"></span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;"><br></span></pre>
+    将Source压缩到Compressed，成为LZO压缩数据格式。这个函式是将数据拆成小包的数据分解来压缩，主要使用于不确定原始数据大小
+    的状况下使用，例如使用于网路即时传输用途时。<br>
+    <br>
+    完成时需要呼叫CompressDone函式。<br>
+    <br>
+    这个函式会将Source的数据由前面开始移除，移除的数据是已经完成压缩的原始数据。<br>
+    <br>
+    返回值为操作码。<br>
+    <br>
+    <a name="CompressDone"></a><br>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;"></span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span><span style=" font-style:italic; color:#000000;">CompressDone</span><span style=" color:#c0c0c0;"></span><span style=" color:#000000;">(</span><span style=" color:#800080;">QByteArray</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>Compressed<span style=" color:#000000;">)</span><span style=" color:#000000;"></span></pre>
+    <br>
+    使用doSection的压缩方式时，数据完成时，需要呼叫这个函式来写入结尾。<br>
+    <br>
+    <a name="BeginDecompress"></a><br>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;"></span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span><span style=" font-style:italic; color:#000000;">BeginDecompress</span><span style=" color:#c0c0c0;"></span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#000000;"></span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;"><br></span></pre>
+    准备开始解压缩。<br>
+    <br>
+    <a name="doDecompress"></a><br>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;"></span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span><span style=" font-style:italic; color:#000000;">doDecompress</span><span style=" color:#c0c0c0;"></span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QByteArray</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>Source<span style=" color:#000000;">,</span><span style=" color:#800080;">QByteArray</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>Decompressed<span style=" color:#000000;">)</span><span style=" color:#000000;"></span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;"><br></span></pre>
+    将压缩的原始数据Source解压缩到Decompressed，Source基本上是个完整的LZO文件。<br>
+    <br>
+    返回值为操作码。<br>
+    <br>
+    <a name="undoSection"></a><br>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;"></span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span><span style=" font-style:italic; color:#000000;">undoSection</span><span style=" color:#c0c0c0;"></span><span style=" color:#000000;">(</span><span style=" color:#c0c0c0;"></span><span style=" color:#800080;">QByteArray</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>Source<span style=" color:#000000;">,</span><span style=" color:#800080;">QByteArray</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>Decompressed<span style=" color:#000000;">)</span><span style=" color:#000000;"></span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;"><br></span></pre>
+    将压缩的原始数据Source解压缩到Decompressed，成为原始数据。这个函式是将数据拆成小包的数据分解来解压缩，主要使用于不确定
+    原始数据大小的状况下使用，例如使用于网路即时传输用途时。<br>
+    <br>
+    完成时需要呼叫DecompressDone函式。<br>
+    <br>
+    这个函式会将Source的数据由前面开始移除，移除的数据是已经完成解压缩的LZO数据。<br>
+    <br>
+    返回值为操作码。<br>
+    <br>
+    <a name="DecompressDone"></a><br>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;"></span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span><span style=" font-style:italic; color:#000000;">DecompressDone</span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#000000;"></span></pre>
+    <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+    解压缩完成时，需要呼叫这个函式。<br>
+    <br>
+    <a name="IsTail"></a><br>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;"></span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;"> </span><span style=" font-style:italic; color:#000000;">IsTail</span><span style=" color:#c0c0c0;"></span><span style=" color:#000000;">(</span><span style=" color:#800080;">QByteArray</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>header<span style=" color:#000000;">)</span><span style=" color:#000000;"></span></pre>
+    <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+    判断是否为LZO文件格式的结尾。<br>
+    <br>
+    <a name="CompressHeader"></a><br>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;"></span><span style=" color:#808000;">void</span><span style=" color:#c0c0c0;"> </span><span style=" font-style:italic; color:#000000;">CompressHeader</span><span style=" color:#000000;">(</span><span style=" color:#800080;">QByteArray</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>Compressed<span style=" color:#000000;">)</span><span style=" color:#000000;"></span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;"><br></span></pre>
+    製作LZO压缩文件格式表头。<br>
+    <br>
+    <a name="CompressTail"></a><br>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;"></span><span style=" color:#808000;">void</span><span style=" color:#c0c0c0;"> </span><span style=" font-style:italic; color:#000000;">CompressTail</span><span style=" color:#000000;">(</span><span style=" color:#808000;">unsigned</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>checksum<span style=" color:#000000;">,</span><span style=" color:#800080;">QByteArray</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>Compressed<span style=" color:#000000;">)</span><span style=" color:#000000;"></span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;"><br></span></pre>
+    製作LZO压缩文件格式结尾。checksum是ADLER32。<br>
+    <br>
+    <a name="DecompressHeader"></a><br>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;"></span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span><span style=" font-style:italic; color:#000000;">DecompressHeader</span><span style=" color:#c0c0c0;"></span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QByteArray</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>Source<span style=" color:#000000;">)</span><span style=" color:#000000;"></span></pre>
+    <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+    检查Source是否为LZO文件表头，并且返回数据开始的位置。<br>
+    <br>
+    <hr size="2" width="100%">
+    <h3><a name="ScriptableLzo"></a>ScriptableLzo类别</h3>
+    <h4> 功能</h4>
+    Qt Script的Javascript当中，处理LZO文件的压缩及解压缩。<br>
+    <h4>宣告</h4>
+    <span style=" color:#808000;">class</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#800080;">ScriptableLzo</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">:</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#808000;">public</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QObject</span>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">                 </span><span style=" color:#000000;">,</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">public</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QScriptable</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">                 </span><span style=" color:#000000;">,</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">public</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QtLzo</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000000;">{</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#000080;">Q_OBJECT</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#808000;">public</span><span style=" color:#000000;">:</span></pre>
+    <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">explicit</span><span style=" color:#c0c0c0;">     </span><span style=" color:#800080;">ScriptableLzo</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#800080;">QObject</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>parent<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">virtual</span><span style=" color:#c0c0c0;">     </span><span style=" color:#000000;">~</span><span style=" font-style:italic; color:#000000;">ScriptableLzo</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+    <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#808000;">protected</span><span style=" color:#000000;">:</span></pre>
+    <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#808000;">private</span><span style=" color:#000000;">:</span></pre>
+    <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#808000;">public</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">slots</span><span style=" color:#000000;">:</span></pre>
+    <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">virtual</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;"> </span><span style=" font-style:italic; color:#000000;">ToLzo</span><span style=" color:#c0c0c0;">         </span><span style=" color:#000000;">(</span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span>file<span style=" color:#000000;">,</span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span>lzo<span style=" color:#000000;">,</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>level<span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000080;">9</span><span style=" color:#000000;">,</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>method<span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QtLzo</span><span style=" color:#000000;">::</span><span style=" color:#800080;">LZO1x</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">virtual</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;"> </span><span style=" font-style:italic; color:#000000;">ToFile</span><span style=" color:#c0c0c0;">        </span><span style=" color:#000000;">(</span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span>lzo<span style=" color:#000000;">,</span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span>file<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+    <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#808000;">protected</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">slots</span><span style=" color:#000000;">:</span></pre>
+    <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#808000;">private</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">slots</span><span style=" color:#000000;">:</span></pre>
+    <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#808000;">signals</span><span style=" color:#000000;">:</span></pre>
+    <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000000;">};</span></pre>
+    <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+    <h4>说明</h4>
+    <a name="ToLzo"></a><br>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;"></span><span style=" color:#808000;">bool</span> <span style=" font-style:italic; color:#000000;">ToLzo</span><span style=" color:#c0c0c0;"></span><span style=" color:#000000;">(</span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span>file<span style=" color:#000000;">,</span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span>lzo<span style=" color:#000000;">,</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>level<span style=" color:#000080;"></span><span style=" color:#000000;">,</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>method<span style=" color:#000000;">)</span><span style=" color:#000000;"></span></pre>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;"><br></span></pre>
+    将文件file压缩成lzo档，成功则返回true，失败则返回false。<br>
+    <br>
+    参数说明：<br>
+    <ol>
+      <li>file : 原始文件。</li>
+      <li>lzo : LZO压缩档。</li>
+      <li>level : 1 ~ 9，内定值为9。</li>
+      <li>method : lzoMethods，内定值为LZO1x。<br>
+      </li>
+    </ol>
+    <br>
+    <a name="ToFile"></a><br>
+    <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;"> </span><span style=" font-style:italic; color:#000000;">ToFile</span><span style=" color:#c0c0c0;"></span><span style=" color:#000000;">(</span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span>lzo<span style=" color:#000000;">,</span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span>file<span style=" color:#000000;">)</span><span style=" color:#000000;"></span></pre>
+    <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+    将lzo文件解压缩成file，成功则返回true，失败则返回false。<br>
+    <br>
+    <hr size="2" width="100%">
+    <h3><a name="Functions"></a>QtLzo函数</h3>
+    Qt LZO目前提供六个函数。<br>
+    <br>
+    <ul>
+      <li> <span style=" color:#808000;">bool</span><span style="
+          color:#c0c0c0;"> </span><span style=" color:#000000;">ToLZO</span><span
+          style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+          style=" color:#808000;">const</span><span style="
+          color:#c0c0c0;"> </span><span style=" color:#800080;">QByteArray</span><span
+          style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+          style=" color:#c0c0c0;"> </span>data<span style="
+          color:#000000;">,</span><span style=" color:#800080;">QByteArray</span><span
+          style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+          style=" color:#c0c0c0;"> </span>lzo<span style="
+          color:#000000;">,</span><span style=" color:#808000;">int</span><span
+          style=" color:#c0c0c0;"> </span>level<span style="
+          color:#c0c0c0;"> </span><span style=" color:#000000;">=</span><span
+          style=" color:#c0c0c0;"> </span><span style=" color:#000080;">9</span><span
+          style=" color:#000000;">,</span><span style=" color:#808000;">int</span><span
+          style=" color:#c0c0c0;"> </span>method<span style="
+          color:#c0c0c0;"> </span><span style=" color:#000000;">=</span><span
+          style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QtLzo</span><span
+          style=" color:#000000;">::</span><span style=" color:#800080;">LZO1x</span><span
+          style=" color:#000000;">)</span></li>
+      <li><span style=" color:#808000;">bool</span><span style="
+          color:#c0c0c0;"> </span><span style=" color:#000000;">FromLZO</span><span
+          style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+          style=" color:#808000;">const</span><span style="
+          color:#c0c0c0;"> </span><span style=" color:#800080;">QByteArray</span><span
+          style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+          style=" color:#c0c0c0;"> </span>lzo<span style="
+          color:#c0c0c0;"> </span><span style=" color:#000000;">,</span><span
+          style=" color:#800080;">QByteArray</span><span style="
+          color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+          style=" color:#c0c0c0;"> </span>data<span style="
+          color:#000000;">)</span></li>
+      <li><span style=" color:#808000;">bool</span><span style="
+          color:#c0c0c0;"> </span><span style=" color:#000000;">SaveLZO</span><span
+          style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+          style=" color:#800080;">QString</span><span style="
+          color:#c0c0c0;"> </span>filename<span style=" color:#000000;">,</span><span
+          style=" color:#800080;">QByteArray</span><span style="
+          color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+          style=" color:#c0c0c0;"> </span>data<span style="
+          color:#000000;">,</span><span style=" color:#808000;">int</span><span
+          style=" color:#c0c0c0;"> </span>level<span style="
+          color:#c0c0c0;"> </span><span style=" color:#000000;">=</span><span
+          style=" color:#c0c0c0;"> </span><span style=" color:#000080;">9</span><span
+          style=" color:#000000;">,</span><span style=" color:#808000;">int</span><span
+          style=" color:#c0c0c0;"> </span>method<span style="
+          color:#c0c0c0;"> </span><span style=" color:#000000;">=</span><span
+          style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QtLzo</span><span
+          style=" color:#000000;">::</span><span style=" color:#800080;">LZO1x</span><span
+          style=" color:#000000;">)</span></li>
+      <li><span style=" color:#808000;">bool</span><span style="
+          color:#c0c0c0;"> </span><span style=" color:#000000;">LoadLZO</span><span
+          style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+          style=" color:#800080;">QString</span><span style="
+          color:#c0c0c0;"> </span>filename<span style=" color:#000000;">,</span><span
+          style=" color:#800080;">QByteArray</span><span style="
+          color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+          style=" color:#c0c0c0;"> </span>data<span style="
+          color:#000000;">)</span></li>
+      <li><span style=" color:#808000;">bool</span><span style="
+          color:#c0c0c0;"> </span><span style=" color:#000000;">FileToLzo</span><span
+          style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+          style=" color:#800080;">QString</span><span style="
+          color:#c0c0c0;"> </span>file<span style=" color:#000000;">,</span><span
+          style=" color:#800080;">QString</span><span style="
+          color:#c0c0c0;"> </span>lzo<span style=" color:#000000;">,</span><span
+          style=" color:#808000;">int</span><span style="
+          color:#c0c0c0;"> </span>level<span style=" color:#c0c0c0;"> </span><span
+          style=" color:#000000;">=</span><span style=" color:#c0c0c0;">
+        </span><span style=" color:#000080;">9</span><span style="
+          color:#000000;">,</span><span style=" color:#808000;">int</span><span
+          style=" color:#c0c0c0;"> </span>method<span style="
+          color:#c0c0c0;"> </span><span style=" color:#000000;">=</span><span
+          style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QtLzo</span><span
+          style=" color:#000000;">::</span><span style=" color:#800080;">LZO1x</span><span
+          style=" color:#000000;">)</span></li>
+      <li><span style=" color:#808000;">bool</span><span style="
+          color:#c0c0c0;"> </span><span style=" color:#000000;">LzoToFile</span><span
+          style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+          style=" color:#800080;">QString</span><span style="
+          color:#c0c0c0;"> </span>lzo<span style=" color:#000000;">,</span><span
+          style=" color:#800080;">QString</span><span style="
+          color:#c0c0c0;"> </span>file<span style=" color:#000000;">)</span></li>
+    </ul>
+    <br>
+    <h4>说明</h4>
+    <a name="ToLZO"></a><br>
+    <span style=" color:#808000;">bool</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">ToLZO</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">const</span><span style=" color:#c0c0c0;">
+    </span><span style=" color:#800080;">QByteArray</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+      style=" color:#c0c0c0;"> </span>data<span style=" color:#000000;">,</span><span
+      style=" color:#800080;">QByteArray</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+      style=" color:#c0c0c0;"> </span>lzo<span style=" color:#000000;">,</span><span
+      style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>level<span
+      style=" color:#000080;"></span><span style=" color:#000000;">,</span><span
+      style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>method<span
+      style=" color:#000000;">)</span><br>
+    <br>
+    将数据压缩成LZO压缩格式，成功则返回true，失败则返回false。<br>
+    <br>
+    参数说明：<br>
+    <ol>
+      <li>data : 原始数据。<br>
+      </li>
+      <li>lzo : LZO压缩数据。</li>
+      <li>level : 1 ~ 9，内定值为9。</li>
+      <li>method : lzoMethods，内定值为LZO1x。<br>
+      </li>
+    </ol>
+    <a name="FromLZO"></a><br>
+    <span style=" color:#808000;">bool</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">FromLZO</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">const</span><span style=" color:#c0c0c0;">
+    </span><span style=" color:#800080;">QByteArray</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+      style=" color:#c0c0c0;"> </span>lzo<span style=" color:#c0c0c0;">
+    </span><span style=" color:#000000;">,</span><span style="
+      color:#800080;">QByteArray</span><span style=" color:#c0c0c0;"> </span><span
+      style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;">
+    </span>data<span style=" color:#000000;">)</span><br>
+    <br>
+    将LZO数据解压缩成原始数据，成功则返回true，失败则返回false。<br>
+    <br>
+    参数说明：<br>
+    <ol>
+      <li>lzo : LZO压缩数据。</li>
+      <li>data : 原始数据。</li>
+    </ol>
+    <span style=" color:#000000;"><a name="SaveLZO"></a></span><br>
+    <span style=" color:#808000;">bool</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">SaveLZO</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span>filename<span style=" color:#000000;">,</span><span
+      style=" color:#800080;">QByteArray</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+      style=" color:#c0c0c0;"> </span>data<span style=" color:#000000;">,</span><span
+      style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>level<span
+      style=" color:#000080;"></span><span style=" color:#000000;">,</span><span
+      style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>method<span
+      style=" color:#000000;">)</span><br>
+    <br>
+    将数据压缩成LZO压缩格式，并储存到文件中，成功则返回true，失败则返回false。<br>
+    <br>
+    参数说明：<br>
+    <ol>
+      <li>filename : LZO文件名称。<br>
+      </li>
+      <li>data : 原始数据。</li>
+      <li>level : 1 ~ 9，内定值为9。</li>
+      <li>method : lzoMethods，内定值为LZO1x。<br>
+      </li>
+    </ol>
+    <a name="LoadLZO"></a><br>
+    <span style=" color:#808000;">bool</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">LoadLZO</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span>filename<span style=" color:#000000;">,</span><span
+      style=" color:#800080;">QByteArray</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+      style=" color:#c0c0c0;"> </span>data<span style=" color:#000000;">)</span><br>
+    <br>
+    将LZO文件解压缩成原始数据，成功则返回true，失败则返回false。<br>
+    <br>
+    参数说明：<br>
+    <ol>
+      <li>filename : LZO文件名称。</li>
+      <li>data : 原始数据。<br>
+      </li>
+    </ol>
+    <a name="FileToLzo"></a><br>
+    <span style=" color:#808000;">bool</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">FileToLzo</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span>file<span style=" color:#000000;">,</span><span
+      style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span>lzo<span style=" color:#000000;">,</span><span
+      style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>level<span
+      style=" color:#000080;"></span><span style=" color:#000000;">,</span><span
+      style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>method<span
+      style=" color:#000000;">)</span><br>
+    <br>
+    将文件file压缩成lzo档，成功则返回true，失败则返回false。<br>
+    <br>
+    参数说明：<br>
+    <ol>
+      <li>file : 原始文件。</li>
+      <li>lzo : LZO压缩档。</li>
+      <li>level : 1 ~ 9，内定值为9。</li>
+      <li>method : lzoMethods，内定值为LZO1x。<br>
+      </li>
+    </ol>
+    <br>
+    <a name="LzoToFile"></a><br>
+    <span style=" color:#808000;">bool</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">LzoToFile</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span>lzo<span style=" color:#000000;">,</span><span
+      style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span>file<span style=" color:#000000;">)</span><br>
+    <br>
+    将lzo文件解压缩成file，成功则返回true，失败则返回false。<br>
+    <br>
+    <br>
+    <hr size="2" width="100%">
+    <div align="center"><font color="#cc9933"><i><b>Neutrino
+            International Inc. 2001~2015</b></i></font><br>
+    </div>
+    <br>
+  </body>
+</html>

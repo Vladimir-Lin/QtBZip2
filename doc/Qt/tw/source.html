@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- lastest modification : 2015-11-02 -->
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>LZO原始碼編譯說明</title>
+    <link href="classic.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div align="center"><h1>LZO原始碼編譯說明</h1></div>
+    <hr size="2" width="100%"> <br>
+    網站：<a href="http://www.oberhumer.com/">http://www.oberhumer.com/</a><br>
+    原始碼：<a
+      href="http://www.oberhumer.com/opensource/lzo/download/lzo-2.09.tar.gz">http://www.oberhumer.com/opensource/lzo/download/lzo-2.09.tar.gz</a><br>
+    版本：2.09<br>
+    <br>
+    <hr size="2" width="100%">
+    <h3>目錄</h3>
+    <ol>
+      <li> Windows Visual Studio編譯方法</li>
+    </ol>
+    <br>
+    <hr size="2" width="100%">
+    <h3>Windows Visual Studio編譯方法</h3>
+    Windows Visual Studio需要編譯八種模式：<br>
+    <ul>
+      <li>Windows Visual Studio x64 ( Static , Debug )</li>
+      <li>Windows Visual Studio x64 ( Static , Release )</li>
+      <li>Windows Visual Studio x64 ( DLL , Debug )</li>
+      <li>Windows Visual Studio x64 ( DLL , Release )</li>
+      <li>Windows Visual Studio x86 ( Static , Debug )</li>
+      <li>Windows Visual Studio x86 ( Static , Release )</li>
+      <li>Windows Visual Studio x86 ( DLL , Debug )</li>
+      <li>Windows Visual Studio x86 ( DLL , Release )<br>
+      </li>
+    </ul>
+    <h4>解壓縮</h4>
+    lzo-2.09.tar.gz在「QtLzo/3rdparty/souces」當中可以找到，解壓縮lzo-2.09.tar.gz以後，會
+    留下一個lzo-2.09目錄。<br>
+    <br>
+    在平行的目錄下：<br>
+    <br>
+    mkdir lzo<br>
+    cd lzo<br>
+    <h4>Windows Visual Studio x64 ( Static , Debug )</h4>
+    cmake -G "VIsual Studio 12 Win64" ..\lzo-2.09<br>
+    cd ..<br>
+    cmake-gui lzo<br>
+    <br>
+    將ENABLE_SHARED關閉掉，打開ENABLE_STATIC，按下「Configure」，然後「Generate」。<br>
+    <br>
+    如此可以產生Visual Studio的sln檔案，接下來選擇lzo.sln打開Visual
+    Studio，選擇「Debug」，並且開始編譯。<br>
+    <h4>Windows Visual Studio x64 ( Static , Release )</h4>
+    cmake -G "VIsual Studio 12 Win64" ..\lzo-2.09<br>
+    cd ..<br>
+    cmake-gui lzo<br>
+    <br>
+    將ENABLE_SHARED關閉掉，打開ENABLE_STATIC，按下「Configure」，然後「Generate」。<br>
+    <br>
+    如此可以產生Visual Studio的sln檔案，接下來選擇lzo.sln打開Visual
+    Studio，選擇「Release」，並且開始編譯。<br>
+    <h4>Windows Visual Studio x64 ( DLL , Debug )</h4>
+    cmake -G "VIsual Studio 12 Win64" ..\lzo-2.09<br>
+    cd ..<br>
+    cmake-gui lzo<br>
+    <br>
+    將ENABLE_STATIC關閉掉，打開ENABLE_SHARED，按下「Configure」，然後「Generate」，如此可以產生
+    Visual Studio的sln檔案。<br>
+    <br>
+    打開「lzo-2.09/include/lzo/lzoconf.h」，在大約220行找到：<br>
+    <br>
+    /* DLL export information */<br>
+    #if !defined(__LZO_EXPORT1)<br>
+    #&nbsp; define
+    __LZO_EXPORT1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    /*empty*/<br>
+    #endif<br>
+    #if !defined(__LZO_EXPORT2)<br>
+    #&nbsp; define
+    __LZO_EXPORT2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    /*empty*/<br>
+    #endif<br>
+    <br>
+    <meta name="qrichtext" content="1">
+    <style type="text/css">p, li { white-space: pre-wrap; }
+</style>修改成為：<br>
+    <br>
+    /* DLL export information */<br>
+    #if !defined(__LZO_EXPORT1)<br>
+    #&nbsp; define __LZO_EXPORT1 __declspec(dllexport) /*empty*/<br>
+    #endif<br>
+    #if !defined(__LZO_EXPORT2)<br>
+    #&nbsp; define
+    __LZO_EXPORT2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    /*empty*/<br>
+    #endif<br>
+    <br>
+    接下來選擇lzo.sln打開Visual Studio，選擇「Debug」，並且開始編譯。<br>
+    <h4>Windows Visual Studio x64 ( DLL , Release )</h4>
+    cmake -G "VIsual Studio 12 Win64" ..\lzo-2.09<br>
+    cd ..<br>
+    cmake-gui lzo<br>
+    <br>
+    將ENABLE_STATIC關閉掉，打開ENABLE_SHARED，按下「Configure」，然後「Generate」，如此可以產生
+    Visual Studio的sln檔案。<br>
+    <br>
+    打開「lzo-2.09/include/lzo/lzoconf.h」，在大約220行找到：<br>
+    <br>
+    /* DLL export information */<br>
+    #if !defined(__LZO_EXPORT1)<br>
+    #&nbsp; define
+    __LZO_EXPORT1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    /*empty*/<br>
+    #endif<br>
+    #if !defined(__LZO_EXPORT2)<br>
+    #&nbsp; define
+    __LZO_EXPORT2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    /*empty*/<br>
+    #endif<br>
+    <br>
+    修改成為：<br>
+    <br>
+    /* DLL export information */<br>
+    #if !defined(__LZO_EXPORT1)<br>
+    #&nbsp; define __LZO_EXPORT1 __declspec(dllexport) /*empty*/<br>
+    #endif<br>
+    #if !defined(__LZO_EXPORT2)<br>
+    #&nbsp; define
+    __LZO_EXPORT2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    /*empty*/<br>
+    #endif<br>
+    <br>
+    接下來選擇lzo.sln打開Visual Studio，選擇「Release」，並且開始編譯。<br>
+    <h4>Windows Visual Studio x86 ( Static , Debug )</h4>
+    cmake ..\lzo-2.09<br>
+    cd ..<br>
+    cmake-gui lzo<br>
+    <br>
+    將ENABLE_SHARED關閉掉，打開ENABLE_STATIC，按下「Configure」，然後「Generate」。<br>
+    <br>
+    如此可以產生Visual Studio的sln檔案，接下來選擇lzo.sln打開Visual
+    Studio，選擇「Debug」，並且開始編譯。<br>
+    <h4>Windows Visual Studio x86 ( Static , Release )</h4>
+    cmake ..\lzo-2.09<br>
+    cd ..<br>
+    cmake-gui lzo<br>
+    <br>
+    將ENABLE_SHARED關閉掉，打開ENABLE_STATIC，按下「Configure」，然後「Generate」。<br>
+    <br>
+    如此可以產生Visual Studio的sln檔案，接下來選擇lzo.sln打開Visual
+    Studio，選擇「Release」，並且開始編譯。<br>
+    <h4>Windows Visual Studio x86 ( DLL , Debug )</h4>
+    cmake ..\lzo-2.09<br>
+    cd ..<br>
+    cmake-gui lzo<br>
+    <br>
+    將ENABLE_STATIC關閉掉，打開ENABLE_SHARED，按下「Configure」，然後「Generate」，如此可以產生
+    Visual Studio的sln檔案。<br>
+    <br>
+    打開「lzo-2.09/include/lzo/lzoconf.h」，在大約220行找到：<br>
+    <br>
+    /* DLL export information */<br>
+    #if !defined(__LZO_EXPORT1)<br>
+    #&nbsp; define
+    __LZO_EXPORT1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    /*empty*/<br>
+    #endif<br>
+    #if !defined(__LZO_EXPORT2)<br>
+    #&nbsp; define
+    __LZO_EXPORT2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    /*empty*/<br>
+    #endif<br>
+    <br>
+    修改成為：<br>
+    <br>
+    /* DLL export information */<br>
+    #if !defined(__LZO_EXPORT1)<br>
+    #&nbsp; define __LZO_EXPORT1 __declspec(dllexport) /*empty*/<br>
+    #endif<br>
+    #if !defined(__LZO_EXPORT2)<br>
+    #&nbsp; define
+    __LZO_EXPORT2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    /*empty*/<br>
+    #endif<br>
+    <br>
+    接下來選擇lzo.sln打開Visual Studio，選擇「Debug」，並且開始編譯。<br>
+    <h4>Windows Visual Studio x86 ( DLL , Release )</h4>
+    cmake ..\lzo-2.09<br>
+    cd ..<br>
+    cmake-gui lzo<br>
+    <br>
+    將ENABLE_STATIC關閉掉，打開ENABLE_SHARED，按下「Configure」，然後「Generate」，如此可以產生
+    Visual Studio的sln檔案。<br>
+    <br>
+    打開「lzo-2.09/include/lzo/lzoconf.h」，在大約220行找到：<br>
+    <br>
+    /* DLL export information */<br>
+    #if !defined(__LZO_EXPORT1)<br>
+    #&nbsp; define
+    __LZO_EXPORT1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    /*empty*/<br>
+    #endif<br>
+    #if !defined(__LZO_EXPORT2)<br>
+    #&nbsp; define
+    __LZO_EXPORT2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    /*empty*/<br>
+    #endif<br>
+    <br>
+    修改成為：<br>
+    <br>
+    /* DLL export information */<br>
+    #if !defined(__LZO_EXPORT1)<br>
+    #&nbsp; define __LZO_EXPORT1 __declspec(dllexport) /*empty*/<br>
+    #endif<br>
+    #if !defined(__LZO_EXPORT2)<br>
+    #&nbsp; define
+    __LZO_EXPORT2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    /*empty*/<br>
+    #endif<br>
+    <br>
+    接下來選擇lzo.sln打開Visual Studio，選擇「Release」，並且開始編譯。<br>
+    <br>
+    <hr size="2" width="100%">
+    <div align="center"><font color="#cc9933"><i><b>Neutrino
+            International Inc. 2001~2015</b></i></font><br>
+    </div>
+    <br>
+  </body>
+</html>
