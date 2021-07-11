@@ -706,6 +706,7 @@ static void fallbackSort            (
               int            nblock ,
               int            verb   )
 {
+  Q_UNUSED(verb);
   #define       SET_BH(zz)  bhtab[(zz) >> 5] |= (1 << ((zz) & 31))
   #define     CLEAR_BH(zz)  bhtab[(zz) >> 5] &= ~(1 << ((zz) & 31))
   #define     ISSET_BH(zz)  (bhtab[(zz) >> 5] & (1 << ((zz) & 31)))
@@ -1123,6 +1124,7 @@ static void mainSort                    (
               int              verb     ,
               int            * budget   )
 {
+  Q_UNUSED(verb);
   #define BIGFREQ(b) (ftab[((b)+1) << 8] - ftab[(b) << 8])
   #define SETMASK (1 << 21)
   #define CLEARMASK (~(SETMASK))
@@ -1332,12 +1334,14 @@ static inline void downHeap (
 
 static void * defaultBzAlloc(void * opaque,int items,int size)
 {
+  Q_UNUSED(opaque);
   void * v = malloc ( items * size ) ;
   return v                           ;
 }
 
 static void defaultBzFree(void * opaque,void * addr)
 {
+  Q_UNUSED(opaque);
   if ( addr != NULL ) free ( addr ) ;
 }
 
@@ -3355,7 +3359,7 @@ bool QtBZip2::isBZip2(QByteArray & header)
 void QtBZip2::CleanUp(void)
 {
   if ( IsNull(BzPacket) ) return     ;
-  BzFile * bzf = (BzFile *) BzPacket ;
+//  BzFile * bzf = (BzFile *) BzPacket ;
   ////////////////////////////////////
 
   ////////////////////////////////////
@@ -3802,6 +3806,7 @@ bool QtBZip2::IsTail(QByteArray & header)
 
 bool QtBZip2::CompressHeader(QByteArray & header)
 {
+  Q_UNUSED(header);
 //  char BZH[5] = { 'B' , 'Z' , 'h' , '9' , 0 } ;
 //  header . append ( BZH , 4 )                 ;
   return true                                 ;

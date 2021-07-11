@@ -18,17 +18,13 @@
  * LINE     : lin-foxman
  *
  ****************************************************************************/
-
 #ifndef QT_BZIP2_H
 #define QT_BZIP2_H
-
+//////////////////////////////////////////////////////////////////////////////
 #include <QtCore>
-#ifndef QT_STATIC
-#include <QtScript>
-#endif
-
+//////////////////////////////////////////////////////////////////////////////
 QT_BEGIN_NAMESPACE
-
+//////////////////////////////////////////////////////////////////////////////
 #ifndef QT_STATIC
 #    if defined(QT_BUILD_QTBZIP2_LIB)
 #      define Q_BZIP2_EXPORT  Q_DECL_EXPORT
@@ -39,64 +35,60 @@ QT_BEGIN_NAMESPACE
 #else
 #      define Q_BZIP2_EXPORT
 #endif
-
+//////////////////////////////////////////////////////////////////////////////
 #define QT_BZIP2_LIB 1
-
-class Q_BZIP2_EXPORT QtBZip2         ;
-#ifndef QT_STATIC
-class Q_BZIP2_EXPORT ScriptableBZip2 ;
-#endif
-
-class Q_BZIP2_EXPORT QtBZip2
-{
-  public:
-
-    explicit        QtBZip2         (void) ;
-    virtual        ~QtBZip2         (void) ;
-
-    static  QString Version         (void) ;
-
-    virtual bool    isBZip2         (QByteArray & header) ;
-
-    virtual void    CleanUp         (void) ;
-
-    virtual bool    IsCorrect       (int returnCode) ;
-    virtual bool    IsEnd           (int returnCode) ;
-    virtual bool    IsFault         (int returnCode) ;
-
+#define QT_BZIP2_VERSION 20210711911
+//////////////////////////////////////////////////////////////////////////////
+class Q_BZIP2_EXPORT QtBZip2                                                 {
+  ////////////////////////////////////////////////////////////////////////////
+  public                                                                     :
+    //////////////////////////////////////////////////////////////////////////
+    explicit        QtBZip2         ( void                                 ) ;
+    virtual        ~QtBZip2         ( void                                 ) ;
+    //////////////////////////////////////////////////////////////////////////
+    static  QString Version         ( void                                 ) ;
+    //////////////////////////////////////////////////////////////////////////
+    virtual bool    isBZip2         ( QByteArray & header                  ) ;
+    //////////////////////////////////////////////////////////////////////////
+    virtual void    CleanUp         ( void                                 ) ;
+    //////////////////////////////////////////////////////////////////////////
+    virtual bool    IsCorrect       ( int returnCode                       ) ;
+    virtual bool    IsEnd           ( int returnCode                       ) ;
+    virtual bool    IsFault         ( int returnCode                       ) ;
+    //////////////////////////////////////////////////////////////////////////
     // Compression functions
-
-    virtual int     BeginCompress   (int level = 9,int workFactor = 30) ;
-    virtual int     BeginCompress   (QVariantList arguments = QVariantList() ) ;
-    virtual int     doCompress      (const QByteArray & Source      ,
-                                           QByteArray & Compressed) ;
-    virtual int     doSection       (      QByteArray & Source      ,
-                                           QByteArray & Compressed) ;
-    virtual int     CompressDone    (QByteArray & Compressed) ;
-
+    //////////////////////////////////////////////////////////////////////////
+    virtual int     BeginCompress   ( int level = 9 , int workFactor = 30  ) ;
+    virtual int     BeginCompress   ( QVariantList arguments = QVariantList() ) ;
+    virtual int     doCompress      ( const QByteArray & Source              ,
+                                            QByteArray & Compressed        ) ;
+    virtual int     doSection       (       QByteArray & Source              ,
+                                            QByteArray & Compressed        ) ;
+    virtual int     CompressDone    (       QByteArray & Compressed        ) ;
+    //////////////////////////////////////////////////////////////////////////
     // Decompression functions
-
-    virtual int     BeginDecompress (void) ;
-    virtual int     doDecompress    (const QByteArray & Source        ,
-                                           QByteArray & Decompressed) ;
-    virtual int     undoSection     (      QByteArray & Source        ,
-                                           QByteArray & Decompressed) ;
-    virtual int     DecompressDone  (void) ;
-
-    virtual bool    IsTail          (QByteArray & header) ;
-
-  protected:
-
-    QMap < QString , QVariant > DebugInfo ;
-    void                      * BzPacket  ;
-
-    virtual bool    CompressHeader  (QByteArray & Compressed) ;
-    virtual bool    CompressTail    (QByteArray & Compressed) ;
-
-  private:
-
-} ;
-
+    //////////////////////////////////////////////////////////////////////////
+    virtual int     BeginDecompress ( void                                 ) ;
+    virtual int     doDecompress    ( const QByteArray & Source              ,
+                                            QByteArray & Decompressed      ) ;
+    virtual int     undoSection     (       QByteArray & Source              ,
+                                            QByteArray & Decompressed      ) ;
+    virtual int     DecompressDone  ( void                                 ) ;
+    //////////////////////////////////////////////////////////////////////////
+    virtual bool    IsTail          ( QByteArray & header                  ) ;
+    //////////////////////////////////////////////////////////////////////////
+  protected                                                                  :
+    //////////////////////////////////////////////////////////////////////////
+    QMap < QString , QVariant > DebugInfo                                    ;
+    void                      * BzPacket                                     ;
+    //////////////////////////////////////////////////////////////////////////
+    virtual bool    CompressHeader  ( QByteArray & Compressed              ) ;
+    virtual bool    CompressTail    ( QByteArray & Compressed              ) ;
+    //////////////////////////////////////////////////////////////////////////
+  private                                                                    :
+    //////////////////////////////////////////////////////////////////////////
+}                                                                            ;
+//////////////////////////////////////////////////////////////////////////////
 Q_BZIP2_EXPORT void       BZip2CRC        (const QByteArray & Data              ,
                                            unsigned int     & bcrc            ) ;
 Q_BZIP2_EXPORT void       BZip2CRC        (int                length            ,
@@ -123,8 +115,7 @@ Q_BZIP2_EXPORT bool       FileToBZip2     (QString            filename          
                                            int                workFactor = 30 ) ;
 Q_BZIP2_EXPORT bool       BZip2ToFile     (QString            bzip2             ,
                                            QString            filename        ) ;
-
-
+//////////////////////////////////////////////////////////////////////////////
 QT_END_NAMESPACE
-
+//////////////////////////////////////////////////////////////////////////////
 #endif
