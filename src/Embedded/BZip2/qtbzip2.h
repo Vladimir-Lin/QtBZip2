@@ -97,39 +97,6 @@ class Q_BZIP2_EXPORT QtBZip2
 
 } ;
 
-#ifndef QT_STATIC
-
-class Q_BZIP2_EXPORT ScriptableBZip2 : public QObject
-                                     , public QScriptable
-                                     , public QtBZip2
-{
-  Q_OBJECT
-  public:
-
-    static QScriptValue Attachment      (QScriptContext * context,QScriptEngine * engine) ;
-
-    explicit            ScriptableBZip2 (QObject * parent) ;
-    virtual            ~ScriptableBZip2 (void) ;
-
-  protected:
-
-  private:
-
-  public slots:
-
-    virtual bool        ToBZip2         (QString file,QString lzo,int level = 9,int workFactor = 30) ;
-    virtual bool        ToFile          (QString lzo,QString file) ;
-
-  protected slots:
-
-  private slots:
-
-  signals:
-
-} ;
-
-#endif
-
 Q_BZIP2_EXPORT void       BZip2CRC        (const QByteArray & Data              ,
                                            unsigned int     & bcrc            ) ;
 Q_BZIP2_EXPORT void       BZip2CRC        (int                length            ,
