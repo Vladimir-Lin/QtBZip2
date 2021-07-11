@@ -1,8 +1,11 @@
 /****************************************************************************
  *
- * Copyright (C) 2001~2016 Neutrino International Inc.
+ * Copyright (C) 2001 ~ 2021
+ * 
+ *  Neutrino International Inc.
+ *  Oriphase Space Travelling Industry
  *
- * Author   : Brian Lin ( Vladimir Lin , Vladimir Forest )
+ * Author   : Brian Lin ( Foxman , Vladimir Lin , Vladimir Forest )
  * E-mail   : lin.foxman@gmail.com
  *          : lin.vladimir@gmail.com
  *          : wolfram_lin@yahoo.com
@@ -11,17 +14,12 @@
  * Skype    : wolfram_lin
  * WeChat   : 153-0271-7160
  * WhatsApp : 153-0271-7160
- * QQ       : lin.vladimir@gmail.com
- * URL      : http://qtbzip2.sourceforge.net/
- *
- * QtBZip2 acts as an interface between Qt and BZip2 library.
- * Please keep QtBZip2 as simple as possible.
- *
- * Copyright 2001 ~ 2016
+ * QQ       : lin.vladimir@gmail.com (2107437784)
+ * LINE     : lin-foxman
  *
  ****************************************************************************/
 
-#include <qtbzip2.h>
+#include "qtbzip2.h"
 
 QT_BEGIN_NAMESPACE
 

@@ -1,4 +1,4 @@
-set MODNAME=QtUUID
+set MODNAME=QtBZip2
 nmake distclean
 rd  /s /q lib
 rd  /s /q mkspecs

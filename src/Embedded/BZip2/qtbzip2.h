@@ -1,8 +1,11 @@
 /****************************************************************************
  *
- * Copyright (C) 2001~2016 Neutrino International Inc.
+ * Copyright (C) 2001 ~ 2021
+ * 
+ *  Neutrino International Inc.
+ *  Oriphase Space Travelling Industry
  *
- * Author   : Brian Lin ( Vladimir Lin , Vladimir Forest )
+ * Author   : Brian Lin ( Foxman , Vladimir Lin , Vladimir Forest )
  * E-mail   : lin.foxman@gmail.com
  *          : lin.vladimir@gmail.com
  *          : wolfram_lin@yahoo.com
@@ -11,13 +14,8 @@
  * Skype    : wolfram_lin
  * WeChat   : 153-0271-7160
  * WhatsApp : 153-0271-7160
- * QQ       : lin.vladimir@gmail.com
- * URL      : http://qtbzip2.sourceforge.net/
- *
- * QtLZO acts as an interface between Qt and LZO library.
- * Please keep QtBZip2 as simple as possible.
- *
- * Copyright 2001 ~ 2016
+ * QQ       : lin.vladimir@gmail.com (2107437784)
+ * LINE     : lin-foxman
  *
  ****************************************************************************/
 
@@ -25,25 +23,29 @@
 #define QT_BZIP2_H
 
 #include <QtCore>
+#ifndef QT_STATIC
 #include <QtScript>
+#endif
 
 QT_BEGIN_NAMESPACE
 
 #ifndef QT_STATIC
 #    if defined(QT_BUILD_QTBZIP2_LIB)
-#      define Q_BZIP2_EXPORT Q_DECL_EXPORT
+#      define Q_BZIP2_EXPORT  Q_DECL_EXPORT
 #    else
 #      define Q_BZIP2_EXPORT  Q_DECL_IMPORT
 #    endif
-#    define __BZIP2_EXPORT1 Q_DECL_IMPORT
+#    define   __BZIP2_EXPORT1 Q_DECL_IMPORT
 #else
-#    define Q_BZIP2_EXPORT
+#      define Q_BZIP2_EXPORT
 #endif
 
 #define QT_BZIP2_LIB 1
 
 class Q_BZIP2_EXPORT QtBZip2         ;
+#ifndef QT_STATIC
 class Q_BZIP2_EXPORT ScriptableBZip2 ;
+#endif
 
 class Q_BZIP2_EXPORT QtBZip2
 {
@@ -95,6 +97,8 @@ class Q_BZIP2_EXPORT QtBZip2
 
 } ;
 
+#ifndef QT_STATIC
+
 class Q_BZIP2_EXPORT ScriptableBZip2 : public QObject
                                      , public QScriptable
                                      , public QtBZip2
@@ -123,6 +127,8 @@ class Q_BZIP2_EXPORT ScriptableBZip2 : public QObject
   signals:
 
 } ;
+
+#endif
 
 Q_BZIP2_EXPORT void       BZip2CRC        (const QByteArray & Data              ,
                                            unsigned int     & bcrc            ) ;
